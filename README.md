@@ -1,2 +1,2 @@
-# mahogano
+# Mahogano
 Electronic commerce software
