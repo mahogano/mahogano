@@ -1,27 +1,41 @@
 package com.mahogano;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
 @Configuration
 public class MahoganoConfiguration {
 
+    private Environment environment;
+
+    @Autowired
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
+
     @Bean(name = "mahoganoDataSource")
-    @ConfigurationProperties(prefix = "spring.mahogano")
     public DataSource mahoganoDataSource() {
-        return DataSourceBuilder.create().build();
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setUrl(environment.getProperty("spring.mahogano.datasource.url"));
+        dataSource.setUsername(environment.getProperty("spring.mahogano.datasource.username"));
+        dataSource.setPassword(environment.getProperty("spring.mahogano.datasource.password"));
+        return dataSource;
     }
 
     @Bean(name = "magentoDataSource")
-    @ConfigurationProperties(prefix = "spring.magento")
     public DataSource magentoDataSource() {
-        return DataSourceBuilder.create().build();
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setUrl(environment.getProperty("spring.magento.datasource.url"));
+        dataSource.setUsername(environment.getProperty("spring.magento.datasource.username"));
+        dataSource.setPassword(environment.getProperty("spring.magento.datasource.password"));
+        return dataSource;
     }
 
     @Bean(name = "mahoganoJdbc")

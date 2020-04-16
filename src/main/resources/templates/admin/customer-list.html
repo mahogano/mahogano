@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Mahogano Admin - Customers List</title>
+</head>
+<body>
+<h1>Customer List</h1>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer: ${customers}">
+            <td th:text="${customer.email}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

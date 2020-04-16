@@ -1,32 +1,32 @@
 {
   "properties": [
     {
-      "name": "spring.mahogano.url",
+      "name": "spring.mahogano.datasource.url",
       "type": "java.lang.String",
       "description": "Connection URL for Mahogano Database."
     },
     {
-      "name": "spring.mahogano.username",
+      "name": "spring.mahogano.datasource.username",
       "type": "java.lang.String",
       "description": "Username for Mahogano Database."
     },
     {
-      "name": "spring.mahogano.password",
+      "name": "spring.mahogano.datasource.password",
       "type": "java.lang.String",
       "description": "Password for Mahogano Database."
     },
     {
-      "name": "spring.magento.url",
+      "name": "spring.magento.datasource.url",
       "type": "java.lang.String",
       "description": "Connection URL for Magento Database."
     },
     {
-      "name": "spring.magento.username",
+      "name": "spring.magento.datasource.username",
       "type": "java.lang.String",
       "description": "Username for Magento Database."
     },
     {
-      "name": "spring.magento.password",
+      "name": "spring.magento.datasource.password",
       "type": "java.lang.String",
       "description": "Password for Magento Database."
     }
