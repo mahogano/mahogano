@@ -13,7 +13,7 @@
         </thead>
         <tbody>
         <tr th:each="customer: ${customers}">
-            <td th:text="${customer.email}"></td>
+            <td><a th:href="@{/admin/customer/{id}(id=${customer.entityId})}" th:text="${customer.email}"></a></td>
         </tr>
         </tbody>
     </table>
