@@ -34,5 +34,4 @@ public class CustomerController {
         return "admin/customer-view";
     }
 
-
 }

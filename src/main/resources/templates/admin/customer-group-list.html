@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Mahogano Admin - Customers Group List</title>
+</head>
+<body>
+<h1>Customer Group List</h1>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customerGroup: ${customerGroups}">
+            <td>
+                <a th:href="@{/admin/customer-group/{id}(id=${customerGroup.customerGroupId})}"
+                   th:text="${customerGroup.customerGroupCode}">
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
