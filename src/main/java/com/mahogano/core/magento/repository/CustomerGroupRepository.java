@@ -1,8 +1,6 @@
 package com.mahogano.core.magento.repository;
 
-import com.mahogano.core.magento.entity.CustomerEntity;
 import com.mahogano.core.magento.entity.CustomerGroup;
-import com.mahogano.core.magento.mapper.CustomerEntityMapper;
 import com.mahogano.core.magento.mapper.CustomerGroupMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -42,7 +40,7 @@ public class CustomerGroupRepository {
                         ID,
                         String.join(", ", COLUMNS)
                 ),
-                new Object[] {customerGroupId},
+                new Object[]{customerGroupId},
                 new CustomerGroupMapper()
         );
     }
